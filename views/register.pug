@@ -1,0 +1,35 @@
+extends partials/head
+
+block vars
+    -var bodyId = 'registerPage'
+
+block content
+    -selectNav = 'register'
+    -var err = locals.err || [];
+    -var user = locals.user || {};
+
+    include partials/header
+    .container
+        each val in err
+            .flash= val
+        form(action="/register" method='post')
+            //- input(type="text" placeholder='Username' name='username' value=user.username)
+            input(type="text" placeholder='First Name' name='firstName' value=user.firstName)
+            input(type="text" placeholder='Last Name' name='lastName' value=user.lastName)
+            input(type="email" placeholder='Email' name='email' value=user.email)
+            input(type="password" placeholder='Password' name='password')
+            label
+                input(type="checkbox" value='tutor' name='tutor' checked=user.tutor) 
+                span I'm a Tutor
+            #tutorForm
+                h4 Subjects You want to tutor in
+                .subjects
+                    - if (subjects)
+                        each k,v in subjects
+                            label
+                                input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
+                                = k
+
+            input(type="submit" value='Register')
+    script(src='/javascripts/loginPageCtrl.js')
+    

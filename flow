@@ -1,0 +1,23 @@
+ON Connect 
+✔ add socket
+✔ check if in it's session
+✔ if yes then start webrtc process
+if not in session then dont do anything more
+
+ON request 
+if accpeted start session
+start new session set it to pending
+
+
+ON accept
+✔ delete all previously active sessions for both user and tutors
+✔ set session to insessoin
+✔ start webrtc
+
+ON reject 
+✔ delete session
+✔ redirect user to tutors
+
+ON disconnect 
+✔ remove socket
+✔ remove all pending sessions

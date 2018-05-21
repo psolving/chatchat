@@ -1,0 +1,64 @@
+extends partials/head
+
+
+block vars
+	-var bodyId = 'videoChat'
+
+block content
+	-selectNav = 'golive'
+
+	include partials/header
+	script(src='https://code.jquery.com/jquery-latest.min.js')
+
+	.top
+		.video
+			.overlay
+				.time-left
+					span.mins-passed 6
+					|  / 
+					span.mins-total 10
+					|  mins
+				.btns
+					.end  x 
+					.mute-video  K 
+					.mute-audio  T 
+				.your-video
+					video(id='my_video', autoplay)
+			.v-wrap
+				video(id='rtc_video', autoplay)
+		.chat
+			.info
+				img(src='', alt='')
+				.name Derby
+			#messages.messages
+				#you.message
+					.text Whats up
+				#other.message
+					.text Nothing Much
+			.send-btn
+				input(type='text' id="message" placeholder='Type here')
+				input(type="submit" id="send-btn" value="Send")
+	.notes
+		span.title Notes
+		span.status Changes Saved
+		label.text
+			textarea hi
+	script(type="text/javascript").
+		// Chat box currently not connected to socket.
+		// However, entered text in the chat box appears 
+		// in the chat, when button is clicked.
+		$(function(){
+			var $message = $('#message');
+			var $messages = $('#messages');
+			
+			$("#send-btn").click(function(){
+				$messages.append('<div class="message" id="you"> <div class="text">' + $message.val() +'</div> </div>');
+				$message.val('');
+			});
+			 
+		});
+		
+	script(src='https://webrtc.github.io/adapter/adapter-latest.js')
+	script(src='/javascripts/videoChat.js')
+
+		

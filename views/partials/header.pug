@@ -1,0 +1,19 @@
+- var selectNav = selectNav || null;
+header
+  a.logo(href='/') TutorFinder
+  .nav
+    unless authenticated
+        a(href="/register", class=(selectNav=='register' && 'selected')) Register
+        a(href="/login", class=(selectNav=='login' && 'selected')) Login
+    else
+        if user.tutor
+            a(href='/golive', class=(selectNav=='golive' && 'selected')) Go Live
+        a(href='/tutors', class=(selectNav=='tutors' && 'selected')) Tutors
+        a(href='/history', class=(selectNav=='history' && 'selected')) History
+        .folded
+            a(href='/myprofile', class=(selectNav=='myprofile' && 'selected')) #{user.firstName}
+            .hover_menu
+                a(href='/setting') Settings
+                a(href='/panel/billing') Billing
+                a(href='/panel/dashboard') Dashboard
+                a(href='/logout') Logout

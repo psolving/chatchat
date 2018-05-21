@@ -1,0 +1,12 @@
+
+block vars
+    - var bodyId = ''
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/socket.io/socket.io.js')
+    block head
+  body(id=bodyId)
+    block content

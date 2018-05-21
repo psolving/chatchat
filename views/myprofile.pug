@@ -1,0 +1,12 @@
+extends partials/head
+
+block vars
+	-var bodyId = 'myprofile'
+
+block content
+	-selectNav = 'myprofile'
+
+	include partials/header
+
+	h1 Hi, I'm in my profile.
+	h2 My name is #{user.firstName} #{user.lastName}

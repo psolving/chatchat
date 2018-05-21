@@ -1,0 +1,6 @@
+html
+	head
+	body
+		h1 Payment
+		form(action="/charge", method="post")
+			script.stripe-button(src="https://checkout.stripe.com/checkout.js", data-key="pk_test_AEs8PFYm4nTIwsJEL0iWjL7O", data-amount, data-name="Math Tutor", data-description="Payment", data-locale="auto")

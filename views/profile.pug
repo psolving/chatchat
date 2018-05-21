@@ -1,0 +1,59 @@
+extends partials/head
+
+block vars
+	-var bodyId = 'tutorProfile'
+
+block content
+	-selectNav = ''
+	include partials/header
+
+	.container
+		.title Profile
+		.info
+			.left
+				img(src='https://randomuser.me/api/portraits/lego/0.jpg', alt='tutor image')
+			.right
+				.name #{tutor.firstName} #{tutor.lastName}
+				.ratings
+					.stars
+						.yellow ★★★
+						.gray ★★
+					.number 32
+				.status
+					span.circle(class=tutor.status)
+					span.text= tutor.status[0].toUpperCase()+tutor.status.substr(1)
+				form(id='sessForm' action= tutor.id+'/request', method='post')
+					.session_len
+						span Choose Duration
+						select(name='session_len')
+							option(value='10') 10 mins
+							option(value='15') 15 mins
+							option(value='20') 20 mins
+							option(value='25') 25 mins
+							option(value='30') 30 mins
+							option(value='40') 40 mins
+							option(value='60') 60 mins
+					.action(hef='#')
+						| Start Session 
+						span.total_cost
+							| $
+							span.cost 10
+		.desc
+			| Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore mollitia autem adipisci qui, ea ratione culpa pariatur, facilis, delectus commodi dolore. Voluptates rem repellat maiores molestiae adipis ipsum dolor sit, amet consectetur adipisicing elit. Labore mollitia autem adipisci qui, ea ratione culpa pariatur, facilis, delectus commodi dolore. Voluptates rem repellat maiores molestiae adipisci, quae numquam modi.
+		.details
+			.detail
+				.d I tutor in
+				.i Bio, Psych, Chem
+			.detail
+				.d My Email is
+				.i test@gmail.com
+			.detail
+				.d I am from
+				.i Brooklyn College
+			.detail
+				.d I speak
+				.i Russian, English, Uzbek
+			.detail
+				.d My rate is
+				.i $10/10min, $60/hr
+	script(src='/javascripts/profile.js')

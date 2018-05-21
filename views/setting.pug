@@ -1,0 +1,38 @@
+extends partials/head
+
+block vars
+	-var bodyId = 'setting'
+	-var user_type = user.tutor ? true : false;
+
+block content
+	-selectNav = ''
+	include partials/header
+
+	.container
+		.title Setting
+		.info
+			.left
+				img(src='https://randomuser.me/api/portraits/lego/0.jpg', alt='tutor image')
+		.form-wrapper
+			form(action='/setting/'+user._id +'/'+user_type, method="post")
+				.form-group
+					label First Name:
+					input.input_box(type='text', value = user.firstName name='firstName')
+					label Last Name:
+					input.input_box(type='text', value = user.lastName name='lastName')
+					label Email:
+					input.input_box(type='email', value = user.email name='email')
+					label New Password:
+					input.input_box(type='password' name='password')
+					br
+					if user.tutor
+						label Subjects:
+						br
+						each k,v in subjects
+							label
+								input(type="checkbox" name="subjects" value=v checked= (user.subjects||[]).includes(v))
+								label(for="subjects")=k
+								br
+						br
+					input(type="submit" value="Submit")
+	script(src='/javascripts/loginPageCtrl.js')

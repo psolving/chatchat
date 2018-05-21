@@ -1,0 +1,66 @@
+extends partials/head
+
+block vars
+	-var bodyId = 'tutorsPage'
+
+block content
+	-selectNav = 'tutors'
+
+	include partials/header
+	.container
+		.left
+			.content
+				h1 Find Tutor
+				form.search(action='#')
+					input.input_box(type='text', placeholder='Type name or Subject')
+					.filters
+						label
+							span.title Subject
+							select(name='subject')
+								option(value='all') All
+						label
+							span.title Ratings
+							select(name='subject')
+								option(value='all') Any
+						label
+							span.title College
+							select(name='subject')
+								option(value='all') Any
+						label
+							span.title Price
+							select(name='subject')
+								option(value='all') Decreasing
+				#d1.line_divider
+				.tutors
+					each tutor in tutors
+						a(href='/tutors/'+tutor._id, class= `tutor ${me.id == tutor.id ? 'hide' : ''}`)
+							img(src=tutor.picture, alt='profile picture')
+							.inner_box
+								.name= `${tutor.firstName} ${tutor.lastName}`
+								.ratings
+									.stars
+										.yellow ★★★
+										.gray ★★
+									.number 32
+								.college Brooklyn College
+								.subjects
+									each sub, i in tutor.subjects
+										span.subject= sub
+										unless ( i == tutor.subjects.length - 1)
+											|, 
+					-var n = 4
+					while n--
+						a.empty
+		
+		.right
+			.title
+				span.green
+				span AVAILABLE NOW 
+				span.count (#[span.number])
+			.online
+				a.tutor.hide(href='#')
+					img.img(src='https://randomuser.me/api/portraits/men/50.jpg')
+					.r
+						.name Mathew Jitter
+						.subjects
+	script(src='/javascripts/tutors.js')

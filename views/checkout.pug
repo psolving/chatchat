@@ -1,0 +1,12 @@
+extends partials/head
+
+block vars
+    -var bodyId = 'checkout'
+
+block content
+    include partials/header
+    .center
+        h1 Your total is $#{amount}, for #{session_len} minutes.
+        form(action="/charge/"+tutorId, method="post")
+            input(type='hidden', name='session_len', value=session_len )
+            script.stripe-button(src="https://checkout.stripe.com/checkout.js", data-key="pk_test_AEs8PFYm4nTIwsJEL0iWjL7O", data-amount=amount*100, data-name="Math Tutor", data-description="Payment", data-locale="auto")

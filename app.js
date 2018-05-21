@@ -14,7 +14,7 @@ const MongoStore = require('connect-mongo')(session);
 mongoose.Promise = global.Promise;
 let m;
 if (process.env.NODE_ENV == 'production') {
-  m = mongoose.connect('mongodb://vchat101:4900chat@ds259778.mlab.com:59778/videochat', { useMongoClient: true });
+  m = mongoose.connect('mongodb://microwave:kk123kkh4@ds241059.mlab.com:41059/videochat100', { useMongoClient: true });
 } else {
   m = mongoose.connect('mongodb://localhost/node-auth', { useMongoClient: true });
   //m = mongoose.connect('mongodb://fbhkhan:videochat@ec2-52-0-14-185.compute-1.amazonaws.com:27017/node-auth', { useMongoClient: true });

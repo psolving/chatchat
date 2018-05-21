@@ -18,18 +18,31 @@ block content
             input(type="text" placeholder='Last Name' name='lastName' value=user.lastName)
             input(type="email" placeholder='Email' name='email' value=user.email)
             input(type="password" placeholder='Password' name='password')
-            label
-                input(type="checkbox" value='tutor' name='tutor' checked=user.tutor) 
-                span I'm a Tutor
-            #tutorForm
-                h4 Subjects You want to tutor in
-                .subjects
-                    - if (subjects)
-                        each k,v in subjects
-                            label
-                                input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
-                                = k
-
-            input(type="submit" value='Register')
-    script(src='/javascripts/loginPageCtrl.js')
+            html 
+                head
+                    title
+                    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+                    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+                    script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+                body
+                    label
+                        input(type="checkbox" value='tutor' name='tutor' checked=user.tutor) 
+                        span Tutor
+                        
+                    a(href='#', data-toggle='modal', role='button', data-target='#modalPassword') Select Subjects (Tutors)
+                    div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
+                        div(class='modal-dialog')
+                            div(class='modal-content')
+                                div(class='modal-header')
+                                    h4(class='modal-title') Subjects                    
+                                    .subjects
+                                        - if (subjects)
+                                            each k,v in subjects
+                                                label
+                                                    input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
+                                                    = k                                
+                                    button(type='button', class='close', data-dismiss='modal') Close
+                    
+                input(type="submit" value='Register')
+            script(src='/javascripts/loginPageCtrl.js')
     

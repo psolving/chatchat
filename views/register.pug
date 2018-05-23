@@ -50,10 +50,8 @@ block content
                                                 label
                                                     input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
                                                     = k
-                                .modal-body
-                                .modal-footer
-                                    button(type='button', class='close', data-dismiss='modal') Close
-                    
+                                button(type='button', class='close', data-dismiss='modal') Close
+                                     
                 input(type="submit" value='Register')
             script(src='/javascripts/loginPageCtrl.js')
     

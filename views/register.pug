@@ -30,13 +30,11 @@ block content
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
                     script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
                 body
-                    //label
-                    .checkbox
-                        input#check(type="checkbox" value='tutor' name='checkbox' checked=user.tutor)
-                        label(for='check') Some Text Here
-                        //span Tutor
+                    label
+                        input(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
+                        span Tutor
                        
-                    button.btn.btn-info.btn-lg#btncheck.button(type='button' name='anmelden' value='Send' data-toggle='modal' data-target='#modalPassword') Classes
+                    button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#modalPassword') Classes
                     div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
                         div(class='modal-dialog')
                             div(class='modal-content')

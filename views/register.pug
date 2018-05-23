@@ -35,18 +35,18 @@ block content
                         #nxtbutton 
                             #next-container
                                 button.btn.btn-info.btn-lg#nxtBtn.card__btn.btn(type='button' data-toggle='modal' data-target='#modalPassword') Classes
-                    div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
-                        div(class='modal-dialog')
-                            div(class='modal-content')
-                                div(class='modal-header')
-                                    h2(class='modal-title') Subjects                    
-                                    .subjects
-                                        - if (subjects)
-                                            each k,v in subjects
-                                                label
-                                                    input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
-                                                    = k                                
-                                    button(type='button', class='close', data-dismiss='modal') Close
+                                div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
+                                    div(class='modal-dialog')
+                                        div(class='modal-content')
+                                            div(class='modal-header')
+                                                h2(class='modal-title') Subjects                    
+                                                .subjects
+                                                    - if (subjects)
+                                                        each k,v in subjects
+                                                            label
+                                                                input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
+                                                                = k                                
+                                                button(type='button', class='close', data-dismiss='modal') Close
                     
                 input(type="submit" value='Register')
             script(src='/javascripts/loginPageCtrl.js')

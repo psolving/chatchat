@@ -27,8 +27,9 @@ block content
                 body
                     label
                         input(type="checkbox" value='tutor' name='tutor' checked=user.tutor) 
-                        span Tutor
-                    a(href='#', data-toggle='modal', role='button', data-target='#modalPassword') Select Subjects (Tutors)
+                        span Tutor 
+                        //href='#',
+                    a( data-toggle='modal', role='button', data-target='#modalPassword') Select Subjects (Tutors)
                     div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
                         div(class='modal-dialog')
                             div(class='modal-content')

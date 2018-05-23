@@ -30,8 +30,9 @@ block content
                     script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
                 body
                     label
-                        input(type="checkbox" value='tutor' name='radio' checked=user.tutor) 
+                        input#radio(type="checkbox" value='tutor' name='radio' checked=user.tutor) 
                         span Tutor
+                        br
                         #nxtbutton 
                             #next-container
                                 button.btn.btn-info.btn-lg#nxtBtn.card__btn.btn(type='button' data-toggle='modal' data-target='#modalPassword') Classes

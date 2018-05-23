@@ -21,13 +21,8 @@ block content
             html 
                 head
                     title
-                    //a.btn.btn-info#btncheck.button(href='#', data-toggle='modal', role='button', data-target='#modalPassword') Select Subjects (Tutors)
                     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
                     script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-                    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-                    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
-                    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-                    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
                     script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
                     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
                     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
@@ -35,7 +30,7 @@ block content
                 body
                     td
                     label
-                        input#tick(type="checkbox" value='tutor' name='tutor' checked=user.tutor onchange="getElement('class').disabled = !this.checked;")
+                        input#tick(type="checkbox" value='tutor' name='tutor' checked=user.tutor onchange="getElementById('class').disabled = !this.checked;")
                         span Tutor
                     td   
                     button.btn.btn-primary#class.btn.btn1(type='button' data-toggle='modal' data-target='#modalPassword' disabled='disabled') Select Subjects

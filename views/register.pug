@@ -29,12 +29,12 @@ block content
                         input(type="checkbox" value='tutor' name='tutor' checked=user.tutor) 
                         span Tutor 
                         //href='#', 
-                    a( data-toggle='modal', class='button', data-target='#modalPassword') Select Subjects (Tutors)
+                    a( data-toggle='modal', role='button', data-target='#modalPassword') Select Subjects (Tutors)
                     div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
                         div(class='modal-dialog')
                             div(class='modal-content')
                                 div(class='modal-header')
-                                    h4(class='modal-title') Subjects                    
+                                    h2(class='modal-title') Subjects                    
                                     .subjects
                                         - if (subjects)
                                             each k,v in subjects

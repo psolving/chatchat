@@ -23,14 +23,15 @@ block content
                     title
                     //a.btn.btn-info#btncheck.button(href='#', data-toggle='modal', role='button', data-target='#modalPassword') Select Subjects (Tutors)
                     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-                    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+                    //script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+                    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
                     script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
                 body
                     label
-                        input#radio(type="checkbox" value='tutor' name='radio' checked=user.tutor) 
+                        input#radio(type="checkbox" value='tutor' checked.name="radio" name='radio' checked=user.tutor) 
                         span Tutor
                         br
                         #nxtbutton 

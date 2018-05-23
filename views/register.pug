@@ -30,20 +30,29 @@ block content
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
                     script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
                 body
-                    input#test6(type='checkbox')
-                    label(for='test6') Manual
-                    #myModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+                    label
+                        input#test6(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
+                        span Tutor
+                    button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#modalPassword') Classes
+                    div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
                         .modal-dialog
                             .modal-content
                                 .modal-header
                                     button.close(type='button' data-dismiss='modal' aria-label='Close')
                                         span(aria-hidden='true') &times;
                                     h4#myModalLabel.modal-title Modal title
+                                                            
+                                    .subjects
+                                        - if (subjects)
+                                            each k,v in subjects
+                                                label
+                                                    input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
+                                                    = k   
                                 .modal-body
                                     | Checkbox is checked
                                 .modal-footer
                                     button.btn.btn-default(type='button' data-dismiss='modal') Close
-                                    button.btn.btn-primary(type='button') Save changes
+                                    //button.btn.btn-primary(type='button') Save changes
                     
                     
                     

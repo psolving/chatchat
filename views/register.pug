@@ -26,29 +26,29 @@ block content
                     //script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
-                    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-                    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+                    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+                    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
                     script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
                 body
-                    label
-                        input#radio(type="checkbox" value='tutor' name='radio' checked=user.tutor) 
-                        span Tutor
-                        br
-                        #nxtbutton 
-                            #next-container
-                                button.btn.btn-info.btn-lg#nxtBtn.card__btn.btn(type='button' data-toggle='modal' data-target='#modalPassword') Classes
-                                div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
-                                    div(class='modal-dialog')
-                                        div(class='modal-content')
-                                            div(class='modal-header')
-                                                h2(class='modal-title') Subjects                    
-                                                .subjects
-                                                    - if (subjects)
-                                                        each k,v in subjects
-                                                            label
-                                                                input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
-                                                                = k                                
-                                                button(type='button', class='close', data-dismiss='modal') Close
+                    //label
+                    .checkbox
+                        input#check(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
+                        label(for='check') Some Text Here
+                        //span Tutor
+                       
+                    button.btn.btn-info.btn-lg#btncheck.button(type='submit' name='anmelden' value='Send' data-toggle='modal' data-target='#modalPassword') Classes
+                    div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
+                        div(class='modal-dialog')
+                            div(class='modal-content')
+                                div(class='modal-header')
+                                    h2(class='modal-title') Subjects                    
+                                    .subjects
+                                        - if (subjects)
+                                            each k,v in subjects
+                                                label
+                                                    input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
+                                                    = k                                
+                                    button(type='button', class='close', data-dismiss='modal') Close
                     
                 input(type="submit" value='Register')
             script(src='/javascripts/loginPageCtrl.js')

@@ -34,45 +34,44 @@ block content
                     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')
                 body
                     // Modal
-                    #MyModal.modal.fade(tabindex='-1' role='dialog')
-                        .modal-dialog(role='document')
-                            .modal-content
-                                .modal-header
-                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
-                                        span(aria-hidden='true') &times;
-                                    h4.modal-title Privacy Policy
-                                .modal-body
-                                    .checkbox
-                                        label
-                                            input(type='checkbox')
-                                            |  I declare that I have read, understood and accepted the information on the processing of my personal data.
-                                .modal-footer
-                                    button.btn.btn-default(type='button' data-dismiss='modal') Cancel
-                                    button.btn.btn-primary(type='button' disabled='disabled') Continue
+                    //#MyModal.modal.fade(tabindex='-1' role='dialog')
+                    //    .modal-dialog(role='document')
+                    //        .modal-content
+                    //            .modal-header
+                    //            .modal-body
+                    //                .checkbox
+                    //                    label
+                    //                        input(type='checkbox')
+                    //                        |  I declare that I have read, understood and accepted the information on the processing of my personal data.
+                    //            .modal-footer
+                    //                button.btn.btn-default(type='button' data-dismiss='modal') Cancel
+                    //                button.btn.btn-primary(type='button' disabled='disabled') Continue
                     // Form with confirmation request
-                    form#MyForm(action='/')
-                        p You will have to accept our privacy policy to submit the form data.
-                        button.btn.btn-primary(type='button' data-toggle='modal' data-target='#MyModal') Submit
+                    //form#MyForm(action='/')
+                    //    p You will have to accept our privacy policy to submit the form data.
+                    //    button.btn.btn-primary(type='button' data-toggle='modal' data-target='#MyModal') Submit
 
                     
                     
-                    //label
-                    //    input(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
-                    //    span Tutor
+                    label
+                        input(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
+                        | Tutor
                        
-                    //button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#modalPassword') Classes
-                    //div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
-                    //    //div(class='modal-dialog')
-                    //        //div(class='modal-content')
-                    //            //div(class='modal-header')
-                    //                //h2(class='modal-title') Subjects                    
-                    //                //.subjects
-                    //                    //- if (subjects)
-                    //                        //each k,v in subjects
-                    //                            //label
-                    //                                //input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
-                    //                                //= k                                
-                    //                //button(type='button', class='close', data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button' data-toggle='modal' data-target='#modalPassword' disabled='disabled') Classes
+                    div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
+                        div(class='modal-dialog')
+                            div(class='modal-content')
+                                div(class='modal-header')
+                                    h2(class='modal-title') Subjects                    
+                                    .subjects
+                                        - if (subjects)
+                                            each k,v in subjects
+                                                label
+                                                    input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
+                                                    = k
+                                .modal-body
+                                .modal-footer
+                                    button(type='button', class='close', data-dismiss='modal') Close
                     
                 input(type="submit" value='Register')
             script(src='/javascripts/loginPageCtrl.js')

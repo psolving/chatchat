@@ -54,7 +54,7 @@ block content
                     
                     
                     label
-                        input(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
+                        input(type="checkbox" value='tutor' name='tutor' checked=user.tutor onchange="document.getElementById('terms').disabled = !this.checked;")
                         span Tutor
                        
                     button.btn.btn-primary(type='button' data-toggle='modal' data-target='#modalPassword' disabled='disabled') Classes

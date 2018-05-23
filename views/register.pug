@@ -30,23 +30,40 @@ block content
                     //script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
                     script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
                 body
-                    label
-                        input(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
-                        span Tutor
+                    input#test6(type='checkbox')
+                    label(for='test6') Manual
+                    #myModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+                        .modal-dialog
+                            .modal-content
+                                .modal-header
+                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                        span(aria-hidden='true') &times;
+                                    h4#myModalLabel.modal-title Modal title
+                                .modal-body
+                                    | Checkbox is checked
+                                .modal-footer
+                                    button.btn.btn-default(type='button' data-dismiss='modal') Close
+                                    button.btn.btn-primary(type='button') Save changes
+                    
+                    
+                    
+                    //label
+                        //input(type="checkbox" value='tutor' name='tutor' checked=user.tutor)
+                        //span Tutor
                        
-                    button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#modalPassword') Classes
-                    div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
-                        div(class='modal-dialog')
-                            div(class='modal-content')
-                                div(class='modal-header')
-                                    h2(class='modal-title') Subjects                    
-                                    .subjects
-                                        - if (subjects)
-                                            each k,v in subjects
-                                                label
-                                                    input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
-                                                    = k                                
-                                    button(type='button', class='close', data-dismiss='modal') Close
+                    //button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#modalPassword') Classes
+                    //div(id='modalPassword', class='modal fade', tabindex='-1', role='dialog')
+                        //div(class='modal-dialog')
+                            //div(class='modal-content')
+                                //div(class='modal-header')
+                                    //h2(class='modal-title') Subjects                    
+                                    //.subjects
+                                        //- if (subjects)
+                                            //each k,v in subjects
+                                                //label
+                                                    //input(type="checkbox" name='subjects' value=v checked= (user.subjects||[]).includes(v))
+                                                    //= k                                
+                                    //button(type='button', class='close', data-dismiss='modal') Close
                     
                 input(type="submit" value='Register')
             script(src='/javascripts/loginPageCtrl.js')

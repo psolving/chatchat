@@ -35,7 +35,7 @@ block content
                 body
                     td
                     label
-                        input#tick(type="checkbox" value='tutor' name='tutor' checked=user.tutor onchange="getElementById('class').disabled = !this.checked;")
+                        input#tick(type="checkbox" value='tutor' name='tutor' checked=user.tutor onchange="getElement('class').disabled = !this.checked;")
                         span Tutor
                     td   
                     button.btn.btn-primary#class.btn.btn1(type='button' data-toggle='modal' data-target='#modalPassword' disabled='disabled') Select Subjects
